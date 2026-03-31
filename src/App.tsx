@@ -138,7 +138,7 @@ const Hero = () => (
           </p>
           <div className="flex flex-wrap gap-6">
             <a 
-              href="https://docs.google.com/document/d/1gmZI72QVu2zxjMOoeIKiOwSx3aB9Uv_k/edit?usp=sharing&ouid=109155466413428568448&rtpof=true&sd=true" 
+              href="https://docs.google.com/document/d/1q2ockr-QNNzOIppiY-HIR2yps8F4Iyu_sP7gswKFnrw/edit?tab=t.0" 
               target="_blank" 
               rel="noopener noreferrer"
               className="google-button google-button-primary text-lg px-10 py-5"
