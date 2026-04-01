@@ -297,25 +297,26 @@ const ResultsTable = () => (
             <thead>
               <tr className="bg-white/5 border-b border-white/10">
                 <th className="p-8 text-sm font-bold text-brand-muted uppercase tracking-[0.3em]">Metric</th>
-                <th className="p-8 text-sm font-bold text-brand-muted uppercase tracking-[0.3em]">Mistral-7B</th>
-                <th className="p-8 text-sm font-bold text-brand-muted uppercase tracking-[0.3em]">Synapta (Single)</th>
-                <th className="p-8 text-sm font-bold text-brand-primary uppercase tracking-[0.3em]">Synapta (Mewtwo)</th>
-                <th className="p-8 text-sm font-bold text-brand-muted uppercase tracking-[0.3em]">Improvement</th>
+                <th className="p-8 text-sm font-bold text-brand-muted uppercase tracking-[0.3em]">Standard Monolith (Mistral-7B)</th>
+                <th className="p-8 text-sm font-bold text-brand-muted uppercase tracking-[0.3em]">Edge Generalist (Base Qwen-1.5B)</th>
+                <th className="p-8 text-sm font-bold text-brand-primary uppercase tracking-[0.3em]">Synapta Engine (Mewtwo)</th>
+                <th className="p-8 text-sm font-bold text-brand-muted uppercase tracking-[0.3em]">Synapta Edge</th>
               </tr>
             </thead>
             <tbody className="text-xl">
               {[
-                { metric: "Semantic Similarity", mistral: "0.6170", single: "0.6334", synapta: "0.6525", delta: "+5.7%", highlight: true },
-                { metric: "VRAM Footprint", mistral: "4.4 GB", single: "1.1 GB", synapta: "1.1 GB", delta: "-75%", highlight: true },
-                { metric: "SD Perplexity", mistral: "64.5", single: "60.9", synapta: "57.9", delta: "-10.2%", highlight: false },
-                { metric: "Edge Latency", mistral: "6.2s", single: "4.0s", synapta: "4.1s", delta: "-33.8%", highlight: false },
+                { metric: "Logic Density", col1: "7.0 Billion Params", col2: "1.5 Billion Params", col3: "1.5 Billion + Experts", col4: "Elite Reasoning", highlight: true },
+                { metric: "VRAM Consumption", col1: "4.4 GB", col2: "1.1 GB", col3: "1.1 GB", col4: "-75% Cost", highlight: true },
+                { metric: "Response Latency", col1: "9.20s", col2: "4.06s", col3: "4.09s", col4: "2.2x Faster", highlight: false },
+                { metric: "Semantic Accuracy", col1: "0.6170", col2: "0.6473", col3: "0.6525", col4: "+5.7% Yield", highlight: true },
+                { metric: "Security Architecture", col1: "Hosted API / Cloud", col2: "Local", col3: "Air-Gapped / Local", col4: "100% Private", highlight: false },
               ].map((row, i) => (
                 <tr key={i} className="border-b border-white/5 hover:bg-white/[0.05] transition-colors">
                   <td className="p-8 font-bold text-white">{row.metric}</td>
-                  <td className="p-8 text-brand-muted">{row.mistral}</td>
-                  <td className="p-8 text-brand-muted">{row.single}</td>
-                  <td className={cn("p-8 font-bold", row.highlight ? "text-brand-primary glow-text" : "text-white")}>{row.synapta}</td>
-                  <td className="p-8 font-bold text-brand-accent">{row.delta}</td>
+                  <td className="p-8 text-brand-muted">{row.col1}</td>
+                  <td className="p-8 text-brand-muted">{row.col2}</td>
+                  <td className={cn("p-8 font-bold", row.highlight ? "text-brand-primary glow-text" : "text-white")}>{row.col3}</td>
+                  <td className="p-8 font-bold text-brand-accent">{row.col4}</td>
                 </tr>
               ))}
             </tbody>
